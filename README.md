@@ -1,23 +1,9 @@
 # do
 
-This is the `do` (Digital Ocean) image which contains some tools:
+This is the Digital Ocean image, it's intended to be used as a helper image for CI/CD pipelines.
+
+## Tools
 
 - `doctl`
+- `helm`
 - `jq`
-
-## Usage
-
-You need to have a `doctl` configuration file:  
-- On linux the configuration file is located at `~/.config/doctl/config.yaml`.  
-- On OSX the configuration file is located at `/Users/$USER/Library/Application Support/doctl/config.yaml`.
-
-### Linux
-
-```bash
-docker run --rm -it -v $HOME/.config/doctl/config.yaml:/root/doctl/config.yaml ghcr.io/tracker-tv/do-amd64:latest
-```
-
-### OSX
-```bash
-docker run --rm -it -v /Users/$USER/Library/Application\ Support/doctl/config.yaml:/root/doctl/config.yaml ghcr.io/tracker-tv/do-arm64:latest
-```
