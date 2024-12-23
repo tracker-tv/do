@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "addLabels": ["dependencies"],
+  "semanticCommitType": "chore",
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0,
+  "rebaseWhen": "behind-base-branch",
+  "schedule": "* 0-10 * * 1",
+  "timezone": "Europe/Paris",
+  "enabledManagers": [
+    "dockerfile",
+    "github-actions"
+  ]
+}
