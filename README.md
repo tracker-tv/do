@@ -5,6 +5,7 @@ This is the Digital Ocean image, it's intended to be used as a helper image for 
 ## Tools
 
 - `jq`
+- `git`
 - `doctl`
 - `kubectl`
 - `helm`
