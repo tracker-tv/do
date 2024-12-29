@@ -1,7 +1,8 @@
 FROM ubuntu:24.10 AS builder
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    curl
+    curl \
+    git
 
 RUN curl -fsSLO https://github.com/digitalocean/doctl/releases/download/v1.120.0/doctl-1.120.0-linux-amd64.tar.gz && \
     tar -xf doctl-1.120.0-linux-amd64.tar.gz && \
