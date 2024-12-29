@@ -4,8 +4,10 @@ This is the Digital Ocean image, it's intended to be used as a helper image for 
 
 ## Tools
 
+- `curl`
 - `jq`
 - `git`
+- `argocd`
 - `doctl`
 - `kubectl`
 - `helm`

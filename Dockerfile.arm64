@@ -22,6 +22,10 @@ RUN curl -LO https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.51.
     chmod +x ytt-linux-arm64 && \
     mv ytt-linux-arm64 /tmp/ytt
 
+RUN curl -LO https://github.com/argoproj/argo-cd/releases/download/v2.13.2/argocd-linux-arm64 && \
+    chmod +x argocd-linux-arm64 && \
+    mv argocd-linux-arm64 /tmp/argocd
+
 COPY ./entrypoint.sh /tmp/entrypoint.sh
 RUN chmod +x /tmp/entrypoint.sh
 
@@ -38,6 +42,7 @@ COPY --from=builder /tmp/doctl /usr/local/bin/doctl
 COPY --from=builder /tmp/kubectl /usr/local/bin/kubectl
 COPY --from=builder /tmp/helm /usr/local/bin/helm
 COPY --from=builder /tmp/ytt /usr/local/bin/ytt
+COPY --from=builder /tmp/argocd /usr/local/bin/argocd
 COPY --from=builder /tmp/entrypoint.sh /entrypoint.sh
 
 RUN touch /etc/tracker-tv-do.conf
